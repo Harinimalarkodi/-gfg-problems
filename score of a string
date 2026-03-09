@@ -1,0 +1,23 @@
+class Solution {
+    public int scoreOfString(String s) {
+        int arr[]=new int [s.length()];
+        int j=0;
+        for(char ch:s.toCharArray()){
+            int a=(int)(ch);
+            arr[j]=a;
+            j++;
+        }
+        ArrayList<Integer>b=new ArrayList<>();
+    for(int i=0;i<arr.length-1;i++){
+        int n=Math.abs(arr[i]-arr[i+1]);
+            b.add(n);
+        
+    }
+    int sum=0;
+    for(int i=0;i<b.size();i++){
+        sum=sum+b.get(i);
+    }
+
+     return sum;   
+    }
+}
