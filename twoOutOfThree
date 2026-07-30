@@ -1,0 +1,45 @@
+class Solution {
+    public List<Integer> twoOutOfThree(int[] nums1, int[] nums2, int[] nums3) {
+        List<Integer>a=new ArrayList<>();
+        for(int i:nums1){
+            if(!a.contains(i)){
+                a.add(i);
+            }
+        }
+        for(int i:nums2){
+            if(!a.contains(i)){
+                a.add(i);
+            }
+        }
+        for(int i:nums3){
+            if(!a.contains(i)){
+                a.add(i);
+            }
+        }
+        List<Integer>b=new  ArrayList<>();
+        for(int i:nums1){
+            if(!b.contains(i)){
+                b.add(i);
+            }
+        }
+        List<Integer>c=new  ArrayList<>();
+        for(int i:nums2){
+            if(!c.contains(i)){
+                c.add(i);
+            }
+        }
+        List<Integer>d=new  ArrayList<>();
+        for(int i:nums3){
+            if(!d.contains(i)){
+                d.add(i);
+            }
+        }
+        List<Integer>ans=new ArrayList<>();
+        for(int i:a){
+            if((b.contains(i)&&c.contains(i))||(b.contains(i)&&d.contains(i))||(c.contains(i)&&d.contains(i))){
+                ans.add(i);
+            }
+        }
+        return ans;
+    }
+}
