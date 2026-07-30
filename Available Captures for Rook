@@ -1,0 +1,85 @@
+class Solution {
+    public int numRookCaptures(char[][] b) {
+        int count=0;
+        for(int i=0;i<b.length;i++){
+            for(int j=0;j<b.length;j++){
+                if(b[i][j]=='R'){
+                    boolean up=isup(b,i,j);
+                    boolean down=isdown(b,i,j);
+                 boolean right=isright(b,i,j);
+                   boolean left=isleft(b,i,j);
+                    if(up==true){
+                        count++;
+                    }
+                    if(down==true){
+                        count++;
+                    }
+                     if(right==true){
+                        count++;
+                    }
+                    if(left==true){
+                        count++;
+                    }
+
+                }
+            }
+        }
+        return count;
+    }
+    public static boolean isup(char [][]b,int i, int j){
+              for(int k=i-1;k>=0;k--){
+                if(b[k][j]=='p'){
+                    return true;
+                }
+                else if(b[k][j]=='B'){
+                    return false;
+                }
+                if(b[k][j]=='.'){
+                    continue;
+                }
+              }
+              return false;
+    }
+    public static boolean isdown(char [][]b,int i, int j){
+              for(int k=i+1;k<8;k++){
+                if(b[k][j]=='p'){
+                    return true;
+                }
+                else if(b[k][j]=='B'){
+                    return false;
+                }
+                if(b[k][j]=='.'){
+                    continue;
+                }
+              }
+              return false;
+    }
+      public static boolean isright(char [][]b,int i, int j){
+              for(int k=j+1;k<8;k++){
+                if(b[i][k]=='p'){
+                    return true;
+                }
+                else if(b[i][k]=='B'){
+                    return false;
+                }
+                if(b[i][k]=='.'){
+                    continue;
+                }
+              }
+              return false;
+    }
+    public static boolean isleft(char [][]b,int i, int j){
+              for(int k=j-1;k>=0;k--){
+                if(b[i][k]=='p'){
+                    return true;
+                }
+                else if(b[i][k]=='B'){
+                    return false;
+                }
+                if(b[i][k]=='.'){
+                    continue;
+                }
+              }
+              return false;
+    }
+}
