@@ -1,0 +1,15 @@
+class Solution {
+    public String getEncryptedString(String s, int k) {
+      //char arr[]=new int[n];
+      int m=0;
+        int n=s.length();
+        char arr[]=new char[n];
+        for(int i=0;i<s.length();i++){
+            int b=(i+k)%n;
+             arr[m]=s.charAt(b);
+             m++;
+        }
+        String str=new String(arr);
+        return str;
+    }
+}
