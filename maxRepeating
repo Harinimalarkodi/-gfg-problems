@@ -1,0 +1,21 @@
+class Solution {
+    public int maxRepeating(String sequence, String word) {
+        int n = word.length();
+        int maxCount = 0;
+
+        for (int i = 0; i <= sequence.length() - n; i++) {
+            int count = 0;
+            int j = i;
+
+            // jump in steps of word length
+            while (j + n <= sequence.length() && sequence.substring(j, j + n).equals(word)) {
+                count++;
+                j = j + n;
+            }
+
+            maxCount = Math.max(maxCount, count);
+        }
+
+        return maxCount;
+    }
+}
