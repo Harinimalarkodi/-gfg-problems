@@ -1,0 +1,30 @@
+class Solution {
+    public int totalWaviness(int num1, int num2) {
+        if(((String.valueOf(num1).length())<3)&&((String.valueOf(num2).length()))<3){
+            return 0;
+        }
+        int sum=0;
+      for(int j=num1;j<=num2;j++){
+        int n=j;
+        List<Integer>a=new ArrayList<>();
+        while(n!=0){
+            int r=n%10;
+            a.add(r);
+            n=n/10;
+        }
+        
+        Collections.reverse(a);
+        int count=0;
+        for(int i=1;i<a.size()-1;i++){
+            if((a.get(i)>a.get(i-1))&&(a.get(i)>a.get(i+1))){
+                count++;
+            }
+             if((a.get(i)<a.get(i-1))&&(a.get(i)<a.get(i+1))){
+                count++;
+            }
+        }
+             sum=sum+count;
+      }
+      return sum;
+    }
+}
