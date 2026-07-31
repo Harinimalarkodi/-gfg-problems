@@ -1,0 +1,31 @@
+class Solution {
+    public int countMajoritySubarrays(int[] arr, int val) {
+        int ans=0;
+        for(int i=0;i<arr.length;i++){
+		    List<Integer>a=new ArrayList<>();
+		    for(int j=i;j<arr.length;j++){
+		        a.add(arr[j]);
+		       
+		        boolean maj=majele(a,val);
+		        if(maj==true){
+		            ans++;
+		        }
+		    }
+		}
+	  return ans;
+	}
+	public  static boolean majele(List<Integer>a,int val){
+	    int count=0;
+	    int n=a.size()/2;
+	    for(int i=0;i<a.size();i++){
+	        if(a.get(i)==val){
+	            count++;
+	        }
+	    }
+	    if(count>n){
+	        return true;
+	    }
+	    return false;
+        
+    }
+}
