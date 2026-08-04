@@ -6,12 +6,18 @@ class Solution {
         return a;
     }
     public void subset(int[]nums,int ind, List<Integer>b){
-        if(!a.contains(b)){
-            a.add(new ArrayList<>(b));
+        // if(!a.contains(b)){
+          a.add(new ArrayList<>(b));
            
 
-        }
+        // }
+        // if(i>ind&&nums[i]==nums[i-1]){
+        //     continue;
+        // }
         for(int i=ind;i<nums.length;i++){
+            if(i>ind&&nums[i]==nums[i-1]){
+            continue;
+        }
             b.add(nums[i]);
             subset(nums,i+1,b);
             b.remove(b.size()-1);
