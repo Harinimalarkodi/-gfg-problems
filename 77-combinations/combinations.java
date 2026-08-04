@@ -11,8 +11,9 @@ class Solution {
         return a;
     }
     public void subset(int []arr,int ind,List<Integer>b,int k){
-        if(new ArrayList<>(b).size()==k){
+        if(b.size()==k){
             a.add(new ArrayList<>(b));
+            return;
         }
         for(int i=ind;i<arr.length;i++){
             b.add(arr[i]);
